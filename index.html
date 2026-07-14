@@ -96,11 +96,25 @@
 
     /* ── HERO ── */
     #hero {
-      min-height: 100vh; display: flex; flex-direction: column;
-      justify-content: center; padding-top: 120px;
+      min-height: 100vh; display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 60px; align-items: center;
+      padding-top: 120px;
       max-width: 1100px; margin: 0 auto;
       position: relative;
     }
+    .hero-photo-wrap {
+      flex-shrink: 0;
+      display: flex; flex-direction: column; align-items: center; gap: 16px;
+    }
+    .hero-photo {
+      width: 260px; height: 260px;
+      border-radius: 50%;
+      object-fit: cover; object-position: center top;
+      border: 4px solid var(--surface);
+      box-shadow: 0 0 0 1px var(--border), 0 24px 60px rgba(0,0,0,0.12);
+    }
+    .hero-content { display: flex; flex-direction: column; }
 
     .hero-eyebrow {
       display: inline-flex; align-items: center; gap: 8px;
@@ -284,7 +298,9 @@
       nav { padding: 16px 24px; }
       .nav-links { display: none; }
       section { padding: 72px 24px; }
-      #hero { padding: 120px 24px 72px; }
+      #hero { padding: 120px 24px 72px; grid-template-columns: 1fr; }
+      .hero-photo-wrap { order: -1; }
+      .hero-photo { width: 160px; height: 160px; }
       .hero-stats { gap: 32px; flex-wrap: wrap; }
       #about { grid-template-columns: 1fr; gap: 40px; }
       .exp-item { grid-template-columns: 1fr; gap: 12px; }
@@ -312,34 +328,39 @@
 
   <!-- HERO -->
   <section id="hero">
-    <div class="hero-eyebrow">Technical Product Manager</div>
-    <h1 class="hero-name">Sireesha<br>Naidu Galla</h1>
-    <p class="hero-sub">
-      I build AI-powered products that move the needle — from RAG pipelines and API integrations
-      to go-to-market strategy and data-driven roadmaps. 5+ years across fintech, enterprise SaaS,
-      and healthcare platforms reaching <strong>100M+ end users</strong>.
-    </p>
-    <div class="hero-actions">
-      <a href="#cases" class="btn-primary">View my work</a>
-      <a href="mailto:sgalla@tepper.cmu.edu" class="btn-secondary">Let's connect</a>
+    <div class="hero-content">
+      <div class="hero-eyebrow">Technical Product Manager</div>
+      <h1 class="hero-name">Sireesha<br>Naidu Galla</h1>
+      <p class="hero-sub">
+        I build AI-powered products that move the needle — from RAG pipelines and API integrations
+        to go-to-market strategy and data-driven roadmaps. 5+ years across fintech, enterprise SaaS,
+        and healthcare platforms reaching <strong>100M+ end users</strong>.
+      </p>
+      <div class="hero-actions">
+        <a href="#cases" class="btn-primary">View my work</a>
+        <a href="mailto:sgalla@tepper.cmu.edu" class="btn-secondary">Let's connect</a>
+      </div>
+      <div class="hero-stats">
+        <div>
+          <div class="stat-val">5+</div>
+          <div class="stat-label">Years in product</div>
+        </div>
+        <div>
+          <div class="stat-val">100M+</div>
+          <div class="stat-label">End users impacted</div>
+        </div>
+        <div>
+          <div class="stat-val">$150M+</div>
+          <div class="stat-label">AUM managed</div>
+        </div>
+        <div>
+          <div class="stat-val">91</div>
+          <div class="stat-label">Research citations</div>
+        </div>
+      </div>
     </div>
-    <div class="hero-stats">
-      <div>
-        <div class="stat-val">5+</div>
-        <div class="stat-label">Years in product</div>
-      </div>
-      <div>
-        <div class="stat-val">100M+</div>
-        <div class="stat-label">End users impacted</div>
-      </div>
-      <div>
-        <div class="stat-val">$150M+</div>
-        <div class="stat-label">AUM managed</div>
-      </div>
-      <div>
-        <div class="stat-val">91</div>
-        <div class="stat-label">Research citations</div>
-      </div>
+    <div class="hero-photo-wrap">
+      <img src="Headshot_color.jpg" alt="Sireesha Naidu Galla" class="hero-photo" />
     </div>
   </section>
 
