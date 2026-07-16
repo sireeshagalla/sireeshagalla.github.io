@@ -96,17 +96,20 @@
 
     /* ── HERO ── */
     #hero {
-      min-height: 100vh; display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 60px; align-items: center;
+      min-height: 100vh; display: flex; flex-direction: column;
+      justify-content: center;
       padding-top: 120px;
       max-width: 1100px; margin: 0 auto;
       position: relative;
     }
+    .hero-top {
+      display: grid; grid-template-columns: 1fr auto;
+      gap: 60px; align-items: center;
+      margin-bottom: 64px;
+    }
     .hero-photo-wrap {
       flex-shrink: 0;
-      display: flex; flex-direction: column; align-items: center; gap: 16px;
-      align-self: center;
+      display: flex; align-items: center; justify-content: center;
     }
     .hero-photo {
       width: 300px; height: 360px;
@@ -118,22 +121,16 @@
     }
     .hero-content { display: flex; flex-direction: column; }
 
-    .hero-eyebrow {
-      display: inline-flex; align-items: center; gap: 8px;
-      font-size: 0.8rem; font-weight: 600; letter-spacing: 0.1em;
-      text-transform: uppercase; color: var(--accent);
-      margin-bottom: 28px;
-    }
-    .hero-eyebrow::before {
-      content: ''; width: 28px; height: 2px; background: var(--accent);
-    }
     .hero-name {
       font-family: 'Playfair Display', serif;
       font-size: clamp(2.6rem, 5vw, 4.2rem);
-      line-height: 1.05; letter-spacing: -0.03em;
+      line-height: 1.15; letter-spacing: -0.03em;
       white-space: nowrap;
       margin-bottom: 24px;
-      background: linear-gradient(135deg, #1a1714 0%, #2563eb 60%, #7c3aed 100%);
+      color: var(--text);
+    }
+    .hero-name .highlight {
+      background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -301,9 +298,11 @@
       nav { padding: 16px 24px; }
       .nav-links { display: none; }
       section { padding: 72px 24px; }
-      #hero { padding: 120px 24px 72px; grid-template-columns: 1fr; }
+      #hero { padding: 120px 24px 72px; }
+      .hero-top { grid-template-columns: 1fr; }
       .hero-photo-wrap { order: -1; }
       .hero-photo { width: 180px; height: 220px; border-radius: 16px; }
+      .hero-name { white-space: normal; }
       .hero-stats { gap: 32px; flex-wrap: wrap; }
       #about { grid-template-columns: 1fr; gap: 40px; }
       .exp-item { grid-template-columns: 1fr; gap: 12px; }
@@ -331,38 +330,40 @@
 
   <!-- HERO -->
   <section id="hero">
-    <div class="hero-content">
-      <div class="hero-eyebrow">Hey There 👋</div>
-      <h1 class="hero-name">I'm Sireesha Galla</h1>
-      <p class="hero-sub">
-        A Technical PM who builds <strong>AI-powered products and API integrations</strong> from 0→1
-        with expertise in fintech, healthcare, and enterprise SaaS to ship things that actually move the needle. SWE turned PM.
-</p>
-      <div class="hero-actions">
-        <a href="#cases" class="btn-primary">View my work</a>
-        <a href="mailto:sgalla@tepper.cmu.edu" class="btn-secondary">Let's connect</a>
+    <div class="hero-top">
+      <div class="hero-content">
+        <h1 class="hero-name">Hey! I'm <span class="highlight">Sireesha Galla</span> 👋🏽</h1>
+        <p class="hero-sub">
+          A Technical PM who builds <strong>AI-powered products and API integrations</strong> from 0→1
+          to ship things that actually move the needle. I'm a SWE turned PM with expertise across
+          fintech, healthcare, and enterprise SaaS platforms.
+        </p>
+        <div class="hero-actions">
+          <a href="#cases" class="btn-primary">View my work</a>
+          <a href="mailto:sgalla@tepper.cmu.edu" class="btn-secondary">Let's connect</a>
+        </div>
       </div>
-      <div class="hero-stats">
-        <div>
-          <div class="stat-val">5+</div>
-          <div class="stat-label">Years in product</div>
-        </div>
-        <div>
-          <div class="stat-val">100M+</div>
-          <div class="stat-label">End users impacted</div>
-        </div>
-        <div>
-          <div class="stat-val">$150M+</div>
-          <div class="stat-label">AUM managed</div>
-        </div>
-        <div>
-          <div class="stat-val">91</div>
-          <div class="stat-label">Research citations</div>
-        </div>
+      <div class="hero-photo-wrap">
+        <img id="headshot" src="Headshot3.png" alt="Sireesha Galla" class="hero-photo" />
       </div>
     </div>
-    <div class="hero-photo-wrap">
-      <img id="headshot" src="Headshot3.png" alt="Sireesha Galla" class="hero-photo" />
+    <div class="hero-stats">
+      <div>
+        <div class="stat-val">5+</div>
+        <div class="stat-label">Years in product</div>
+      </div>
+      <div>
+        <div class="stat-val">100M+</div>
+        <div class="stat-label">End users impacted</div>
+      </div>
+      <div>
+        <div class="stat-val">$150M+</div>
+        <div class="stat-label">AUM managed</div>
+      </div>
+      <div>
+        <div class="stat-val">91</div>
+        <div class="stat-label">Research citations</div>
+      </div>
     </div>
   </section>
 
