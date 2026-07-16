@@ -110,7 +110,7 @@
     .hero-photo {
       width: 260px; height: 260px;
       border-radius: 50%;
-      object-fit: cover; object-position: center top;
+      object-fit: cover; object-position: 50% -10%;
       border: 4px solid var(--surface);
       box-shadow: 0 0 0 1px var(--border), 0 24px 60px rgba(0,0,0,0.12);
       transition: opacity 0.4s ease;
@@ -362,7 +362,7 @@
       </div>
     </div>
     <div class="hero-photo-wrap">
-      <img id="headshot" src="Headshot1.png" alt="Sireesha Galla" class="hero-photo" />
+      <img id="headshot" src="Headshot3.png" alt="Sireesha Galla" class="hero-photo" />
     </div>
   </section>
 
@@ -787,19 +787,6 @@
   </footer>
 
   <script>
-    // Rotate headshot every 3 seconds
-    const headshots = ['Headshot1.png', 'Headshot2.png', 'Headshot3.png'];
-    let hsIndex = 0;
-    const hsEl = document.getElementById('headshot');
-    setInterval(() => {
-      hsEl.style.opacity = '0';
-      setTimeout(() => {
-        hsIndex = (hsIndex + 1) % headshots.length;
-        hsEl.src = headshots[hsIndex];
-        hsEl.style.opacity = '1';
-      }, 400);
-    }, 3000);
-
     // Sticky nav border
     const nav = document.getElementById('nav');
     window.addEventListener('scroll', () => {
